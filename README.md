@@ -2,9 +2,9 @@
 
 **Name of your app** Đây là trang web cho phép người dùng đăng bài viết.
 
-Danh sách sinh viên: 	**Phạm Ngọc Thiện - 1312554**
-				**Trần Quang Tín - 1312602 **
-				**Nguyễn Minh Tú - 1312680 **
+Danh sách sinh viên: 	**Phạm Ngọc Thiện - 1312554 
+							Trần Quang Tín - 1312602 
+							Nguyễn Minh Tú - 1312680 **
 
 
 ## Yêu cầu
