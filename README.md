@@ -108,8 +108,8 @@ Yêu cầu **Sử dụng frameworks**:
 
 Danh sách chức năng **bắt buộc**:
 
-* [ ] Đăng ký tài khoản bằng email, password, và tên.
-* [ ] Đăng nhập bằng email và password.
+* [ ] Đăng ký tài khoản bằng username, password.
+* [ ] Đăng nhập bằng username và password.
 * [ ] Sau khi đăng nhập người dùng có đăng bài viết của mình lên.
 * [ ] Cho phép comment trên bài viết. Để thực hiện chức năng này thì phải đăng nhập.
 * [ ] Cho phép người đọc đánh giá bài viết.
