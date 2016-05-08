@@ -36,9 +36,14 @@
             <li><a href="Home">Trang chủ</a></li>
             <li><a href="ListBlog">Bài blog</a></li>
             <li><a href="WriteBlog">Viết Blog</a></li>
+            {{# unless LoggedIn}}
             <li><a href="Login">Đăng nhập</a></li>
             <li><a href="SignUp">Đăng kí</a></li>
+            {{/unless}}
             <li><a href="Contact">Liên hệ</a></li>
+            {{# if LoggedIn}}
+            <li><a href="Logout">Thoát</a></li>
+            {{/if}}
           </ul>
         </div>
         <!--End Navbar-->
