@@ -5,14 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title>Đồ án-Ứng dụng phân tán</title>
-  <link rel="stylesheet" type="text/css" href="/style.css">
-  <style>
-      body {
-        background-image: url("img/BG.jpg"); 
-        background-repeat: no-repeat;
-      }
-  </style>
+  <title>{{{title}}}</title>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
 
     <!-- Bootstrap -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -25,7 +19,7 @@
     <![endif]-->
   </head>
   <body>
-    <div id="header">
+  <div id="header">
       <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <!--Navbar-->
         <div class="navbar-header">
@@ -42,43 +36,27 @@
             <li><a href="Home">Trang chủ</a></li>
             <li><a href="ListBlog">Bài blog</a></li>
             <li><a href="WriteBlog">Viết Blog</a></li>
+            {{# unless LoggedIn}}
             <li><a href="Login">Đăng nhập</a></li>
             <li><a href="SignUp">Đăng kí</a></li>
+            {{/unless}}
             <li><a href="Contact">Liên hệ</a></li>
-            <li><a href="#">Thoát</a></li>
+            {{# if LoggedIn}}
+            <li><a href="Logout">Thoát</a></li>
+            {{/if}}
           </ul>
         </div>
         <!--End Navbar-->
       </nav>
-    </div></br> </br></br></br>
-    <!--Table-->
-    <div class="container">
-       <div class="row">
-        <div class="col-sm-4">
-        <div class="thumbnail" style="height: 450px; width: 340px">
-          <img src="img/3.jpg" style="height: 230px;width: 300px">
-          <div class="caption">
-            <h3 class="text-center" style="color: blue;background: #FFFF00"><strong>Trần Quang Tín</strong></h3>
-            <ul>
-              <li><p>Tuổi: 21</p></li>
-              <li><p>Số bài đăng: 3</p></li>
-              <li><p>Điểm tích luỹ: 108</p></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-             
-        <div class="col-sm-8">
-          <textarea cols="30" rows="25" style="width: 100%"></textarea>
-          <button type="button" class="btn btn-warning" style="width: 150px; font-size: 15px;color: red;">Viết bài <span class="glyphicon glyphicon-pencil"></span> </button>
-        </div>
- </div></br>
+    </div></br> </br>
+  {{{body}}}
 
-        <div class = "form-group col-md-offset-3" >
+
+    <div class = "form-group col-md-offset-4">
         <p style="color: red">Blog 3T group @ Copyright by Tran Quang Tin, Nguyen Minh Tu, Pham Ngoc Thien </p>
       </div>
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+      
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="/js/bootstrap.min.js"></script>

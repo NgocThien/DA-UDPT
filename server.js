@@ -1,20 +1,25 @@
 var express = require('express');
 var mongoose = require('mongoose');
 var path =require ('path');
-var hbs = require('express-handlebars');
+var fs = require('fs');
 
-mongoose.connect('localhost');
+mongoose.connect('mongodb://localhost/myblog', function (err){
+	if (err)
+		console.log('diconnect');
+});
 var app = express();
-var port = process.env.PORT || 5000;
+var port = process.env.PORT || 3000;
 
-
-app.engine('hbs',hbs({extname:'hbs'}));
-app.set('views',path.join(__dirname,'/app/views'));
-app.set('view engine', 'hbs');
+fs.readdirSync(__dirname + '/app/models').forEach(function (file) {
+  	if (~file.indexOf('.js')) require(__dirname + '/app/models/' + file);
+});
 
 app.use(express.static(path.join(__dirname, 'public')));
-var route = require('./routes');
-route(app);
+
+require('./config/express')(app)
+
+require('./config/routes')(app);
+
 app.listen(port, function () {
-  console.log('now listening on http://localhost:5000');
+  console.log('now listening localhost:'+ port);
 })
