@@ -16,8 +16,7 @@ fs.readdirSync(__dirname + '/app/models').forEach(function (file) {
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-require('./config/express')(app)
-
+require('./config/express')(app);
 require('./config/routes')(app);
 
 app.listen(port, function () {
