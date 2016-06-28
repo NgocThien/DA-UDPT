@@ -9,7 +9,6 @@ var ListBlog = {
 	loadListBlog: function(req, res, next){
 		Blog.find(1).sort('_id').exec(function (err, Blogs){
 			req.ListBlog = Blogs;
-			console.log(Blogs);
 			next();
 		})
 	}

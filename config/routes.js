@@ -17,7 +17,7 @@ var configRoutes = function (app){
 	 * Login.render goi ham trong thu muc controllers/login
 	 * isLoggedIn kiem tra da dang nhap hoac dang ki hay chua
 	 */
-	app.get('/Login',isLoggedIn,Login.render );
+	app.get('/Login',Login.render );
 
 	/* 
 	 * Dung passport xac thuc nguoi dung
@@ -35,7 +35,7 @@ var configRoutes = function (app){
 	 * SignUp 
 	 * SignUp.render goi ham trong thu muc controllers/SignUp
 	 */
-	app.get('/SignUp',isLoggedIn,SignUp.render);
+	app.get('/SignUp',SignUp.render);
 
 	/*
  	 * Thanh cong quay lai trang home
@@ -67,7 +67,7 @@ var configRoutes = function (app){
 	 * thanh cong hay that bai deu load lai trang writeBlog
 	 */
 
-	app.get('/WriteBlog', WriteBlog.Render);
+	app.get('/WriteBlog',isLoggedIn, WriteBlog.Render);
 	app.post('/WriteBlog', WriteBlog.Process);	
 
 	/*
@@ -110,7 +110,7 @@ var configRoutes = function (app){
  			return next();
  
 		// ngược lại điều hướng về đăng nhập.
- 		res.redirect('/');
+ 		res.redirect('/Login');
 	}
 }
 module.exports = configRoutes;
