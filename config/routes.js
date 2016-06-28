@@ -1,6 +1,9 @@
 var Login = require('../app/controllers/Login');
 var SignUp = require('../app/controllers/SignUp');
+var WriteBlog = require('../app/controllers/WriteBlog');
+var ListBlog = require('../app/controllers/ListBlog');
 var passport = require('passport');
+
 require('./passport/passport')(passport);
 var configRoutes = function (app){
 	//home
@@ -56,6 +59,15 @@ var configRoutes = function (app){
 		successRedirect : '/',
 		failureRedirect : '/Login'
 	}));
+
+
+	app.get('/WriteBlog', WriteBlog.Render);
+	app.post('/WriteBlog', WriteBlog.Process);	
+
+	app.get('/ListBlog',ListBlog.loadListBlog, ListBlog.render);
+
+
+	
 	/*
 	app.get('/Home', function(req, res, next){
 		res.render('Home');
