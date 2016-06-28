@@ -7,10 +7,13 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
   <title>{{{title}}}</title>
   <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
-
     <!-- Bootstrap -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
-
+<style>
+    body {
+        background-color: #292421;
+      }
+  </style>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -32,10 +35,7 @@
         </div>
 
         <div class="navbar-collapse collapse" id="Main-Menu">
-          <ul class="nav navbar-nav pull-right">
-            <li><a href="Home">Trang chủ</a></li>
-            <li><a href="ListBlog">Bài blog</a></li>
-            <li><a href="WriteBlog">Viết Blog</a></li>
+          <ul class="nav navbar-nav pull-right" >
             {{# unless LoggedIn}}
             <li><a href="Login">Đăng nhập</a></li>
             <li><a href="SignUp">Đăng kí</a></li>
@@ -44,11 +44,22 @@
             {{# if LoggedIn}}
             <li><a href="Logout">Thoát</a></li>
             {{/if}}
-          </ul>
-        </div>
+          </ul> 
+          </div>
+
         <!--End Navbar-->
       </nav>
-    </div></br> </br>
+   </br></br></br>
+    <div class="container">
+       <div class="row">
+       <legend></legend>
+        <div class="col-md-6">
+
+       <div class="btn-group btn-group-justified">
+   <a href="Home" class="btn btn-primary" style="height: 40px;font-size: 20px">Trang chủ</a>
+  <a href="ListBlog" class="btn btn-danger" style="height: 40px;font-size: 20px">Bài blog</a>
+  <a href="WriteBlog" class="btn btn-success" style="height: 40px;font-size: 20px">Viết Blog</a>
+</div></div></div></div> </div></br><legend></legend>
   {{{body}}}
 
 

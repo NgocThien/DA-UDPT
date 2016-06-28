@@ -56,7 +56,7 @@ var configRoutes = function (app){
 		successRedirect : '/',
 		failureRedirect : '/Login'
 	}));
-	/*
+	
 	app.get('/Home', function(req, res, next){
 		res.render('Home');
 	});
@@ -78,7 +78,11 @@ var configRoutes = function (app){
 
 	app.get('/BlogA', function(req, res, next){
   		res.render('BlogA');
-	});*/
+	});
+
+	app.get('/LoginFacebook', function(req, res, next){
+  		res.render('LoginFacebook');
+	});
 }
 module.exports = configRoutes;
 

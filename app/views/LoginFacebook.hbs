@@ -1,25 +1,26 @@
-
-    <!--Table-->
-  <div class="jumbotron">
+ <!--Table-->
+<div class="jumbotron">
 
       <!--Hình lớn-->
       <div class="container">
        <div class="row">
         <div class="col-md-5">
-           <legend><h3 class="text-center" style="color:    #FFFF00"><strong> Đăng nhập</strong></h3></legend>
+           <legend><h3 class="text-center" style="color:    #FFFF00"><strong>Xác nhận đăng nhập</strong></h3></legend>
         <form action="/Login" method ="POST">
           <div class="form-group" style="background: #000080">
-            <label for="" style="color:   #FFFF00; font-size: 15px">Tên đăng nhập</label></br>
-            <input class="form-control" type="text" size="40" placeholder="Tên đăng nhập..." name ="txtUser"></input>
+            <label for="" style="color:   #FFFF00; font-size: 15px">Email</label></br>
+            <input class="form-control" type="text" size="40" placeholder="Email..." name ="txtUser"></input>
           </div>
 
           <div class="form-group" style="background: #000080">
             <label for="" style="color:   #FFFF00;font-size: 15px">Mật khẩu</label></br>
             <input class="form-control" type="password" size="40" placeholder="Nhập mật khẩu..." name ="txtPass"></input>
           </div>
-          <a href ='/auth/facebook'>
-            <button style="border: 0; background: transparent" type="button"> <img src="img\Facebook.gif" width="32" height="32"></button>
-          </a>
+
+            <div class="form-group" style="background: #000080">
+            <label for="" style="color:   #FFFF00;font-size: 15px">Xác nhận mật khẩu</label></br>
+            <input class="form-control" type="password" size="40" placeholder="Nhập mật khẩu..." name ="txtPass"></input>
+          </div>
           
           <button class="btn btn-primary"type="submit" style="width: 100px">Đăng nhập</button>
           <a href ='/SignUp'>
@@ -32,4 +33,3 @@
       </div>
     </div>
   </div></br>
-      
