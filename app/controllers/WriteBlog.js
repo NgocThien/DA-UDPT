@@ -2,7 +2,9 @@ var mongoose = require('mongoose');
 var Blog = mongoose.model('Blogs');
 var WriteBlog = {
 	Render: function(req, res, next){
-		res.render('WriteBlog',{Title: "Blog 3T", WriteBlogAlter:req.flash()});
+		res.render('WriteBlog',{Title: "Blog 3T", 
+							    WriteBlogAlter:req.flash(),
+							    user:req.user });
 	},
 
 	Process: function(req, res, next){

@@ -9,7 +9,7 @@ require('./passport/passport')(passport);
 var configRoutes = function (app){
 	//home
 	app.get('/', function(req, res, next){
-		res.render('Home',{user: req.user, LoggedIn:req.isAuthenticated()});
+		res.render('Home',{user: req.user});
 	});
 
 	/* 
