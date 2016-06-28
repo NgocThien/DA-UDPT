@@ -2,29 +2,35 @@ var mongoose = require('mongoose');
 var Blog = mongoose.model('Blogs');
 var WriteBlog = {
 	Render: function(req, res, next){
-		res.render('WriteBlog',{Title: "Blog 3T", WriteBlogAlter:req.flash()});
+		res.render('WriteBlog',{Title: "Blog 3T", 
+							    WriteBlogAlter:req.flash(),
+							    user:req.user });
 	},
 
 	Process: function(req, res, next){
 		var newBlog = new Blog();
-		req.checkBody('title', 'Yêu cầu nhập nội dung phần tiểu đề.').notEmpty;
-		req.checkBody('contain', 'Yêu cầu nhập nội dung').notEmpty();
+		req.checkBody('txtTitle', 'Yêu cầu nhập nội dung phần tiểu đề.').notEmpty;
+		req.checkBody('txtContent', 'Yêu cầu nhập nội dung').notEmpty();
+		
 		var datenow = new Date();
-		newBlog.Title = req.body.title;
-		newBlog.Content = req.body.contain;
+		newBlog.Title = req.body.txtTitle;
+		newBlog.Content = req.body.txtContent;
 		newBlog.DatePost = datenow;
 		newBlog.Poster = req.user.Name;
+		
 		var errors = req.validationErrors();
-		if(errors){
-			return  req.flash('WriteBlogAlter', 'Em da bi loi');
+		if(errors) {
+			req.flash('WriteBlogAlter', errors[0].msg);
+			return res.redirect('WriteBlog')
 		}
 
 		newBlog.save(function(err) {
-			if (err)
-				throw err;
-				return req.flash('WriteBlogAlter', 'Em da bi loi');
+			if (err) {
+				req.flash('WriteBlogAlter', 'Đăng bài thất bại');
+				return res.redirect('WriteBlog');
+			}
 		});
-		res.redirect('WriteBlog');
+		return res.redirect('WriteBlog');
 	}
 }
 
