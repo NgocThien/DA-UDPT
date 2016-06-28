@@ -1,0 +1,57 @@
+<!--Table-->
+    <div class="jumbotron">
+
+      <!--Hình lớn-->
+      <div class="container">
+       <div class="row">
+        <div class="col-md-5">
+          <legend><h3 class = "text-left" style="color:#000080"><strong>Thông tin cá nhân</strong></h3></legend>
+
+          {{# if RegisterAlert}}
+          <div class="alert alert-danger">{{RegisterAlert}}</div
+            {{/if}}
+
+            <form action="/Manager" class="form-horizontal" method="POST" role="form">
+              <div class = "form-group"  style="font-size: 15px;color:   #FFFF00;background: #000080">
+                <label for="">Họ tên</label>
+                <div>
+                  <input class ="form-control" type="text" tabindex="1" name ="txtName" value= '{{user.Name}}'>
+                </div>
+              </div>
+
+              <div class = "form-group"  style="font-size: 15px;color:   #FFFF00;background: #000080">
+                <label for="">Ngày sinh</label>
+                <div>
+                  <input class ="form-control" type="date" tabindex="2" name ="txtBirthDay" value= {{user.Birthday}}>
+                </div>
+              </div>
+
+              <div class = "form-group" style="font-size: 15px;color:   #FFFF00;background: #000080">
+                <label for="">Địa chỉ</label>
+                <div>
+                  <input class ="form-control" type="text"  tabindex="3" name = "txtAddress" value=  '{{user.Address}}' >
+                </div>
+              </div>
+
+              <div class = "form-group" style="font-size: 15px;color:   #FFFF00;background: #000080">
+                <label for="">Công việc</label>
+                <div>
+                  <input class ="form-control" type="text" tabindex="4" name ="txtJob" value= '{{user.Job}}'>
+                </div>
+              </div>
+
+              <div class = "form-group" style="font-size: 15px;color:   #FFFF00;background: #000080">
+                <label for="">Số điện thoại</label>
+                <div>
+                  <input class ="form-control" type="text" tabindex="5" name ="txtPhone" value= {{user.Phone}}>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-danger" tabindex="5">Cập nhật thông tin</button>
+            </br>
+          </br>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
