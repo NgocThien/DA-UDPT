@@ -2,9 +2,14 @@ var Login = require('../app/controllers/Login');
 var SignUp = require('../app/controllers/SignUp');
 var WriteBlog = require('../app/controllers/WriteBlog');
 var ListBlog = require('../app/controllers/ListBlog');
+var Manager = require('../app/controllers/Manager');
 var passport = require('passport');
 
 require('./passport/passport')(passport);
+var mongoose = require('mongoose');
+var User = mongoose.model('User');
+
+
 var configRoutes = function (app){
 	//home
 	app.get('/', function(req, res, next){
@@ -67,7 +72,10 @@ var configRoutes = function (app){
 	app.get('/ListBlog',ListBlog.loadListBlog, ListBlog.render);
 
 
+	app.get('/Manager', Manager.Render);
+	app.post('/Manager', Manager.Update);
 	
+
 	/*
 	app.get('/Home', function(req, res, next){
 		res.render('Home');
