@@ -11,10 +11,11 @@ var Blog = mongoose.Schema({
 	Poster: String,
 	Comment:[{
 		User:String, 
-		ContentCmt: String, 
+		ContentCmt: {type:String, default :""}, 
 		DateCmt:Date}],
 
-	Rate:{type:Number, default:0}},{collection:'Blogs'});
+
+	View:{type:Number, default:0}},{collection:'Blogs'});
 
 mongoose.model('Blogs',Blog);
 Blog.plugin(autoIncrement.plugin, {

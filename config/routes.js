@@ -76,9 +76,15 @@ var configRoutes = function (app){
 	app.get('/ListBlog',ListBlog.loadListBlog, ListBlog.render);
 
 	/*
+	 * Hien thong bai viet
 	 */
 	app.get('/Blog/:id',ShowBlog.LoadBlog, ShowBlog.Render); 
 	
+	/*
+	 * gui comment len bai viet
+	 */
+	app.post('/Blog',ShowBlog.Comment);
+
 	/*
 	app.get('/Home', function(req, res, next){
 		res.render('Home');

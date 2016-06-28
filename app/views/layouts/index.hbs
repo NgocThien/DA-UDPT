@@ -33,22 +33,23 @@
 
         <div class="navbar-collapse collapse" id="Main-Menu">
           <ul class="nav navbar-nav pull-right">
-            <li><a href="Home">Trang chủ</a></li>
-            <li><a href="ListBlog">Bài blog</a></li>
-            <li><a href="WriteBlog">Viết Blog</a></li>
+            <li><a href="/Home">Trang chủ</a></li>
+            <li><a href="/ListBlog">Bài blog</a></li>
+            <li><a href="/WriteBlog">Viết Blog</a></li>
             {{# unless user}}
-            <li><a href="Login">Đăng nhập</a></li>
-            <li><a href="SignUp">Đăng kí</a></li>
+            <li><a href="/Login">Đăng nhập</a></li>
+            <li><a href="/SignUp">Đăng kí</a></li>
             {{/unless}}
-            <li><a href="Contact">Liên hệ</a></li>
+            <li><a href="/Contact">Liên hệ</a></li>
             {{# if user}}
-            <li><a href="Logout">Thoát</a></li>
+            <li><a href="/Logout">Thoát</a></li>
             {{/if}}
           </ul>
         </div>
         <!--End Navbar-->
       </nav>
     </div></br> </br>
+    </div></br> </br></br>
   {{{body}}}
 
 
