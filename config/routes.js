@@ -2,6 +2,7 @@ var Login = require('../app/controllers/Login');
 var SignUp = require('../app/controllers/SignUp');
 var WriteBlog = require('../app/controllers/WriteBlog');
 var ListBlog = require('../app/controllers/ListBlog');
+var ShowBlog = require('../app/controllers/ShowBlog');
 var passport = require('passport');
 
 require('./passport/passport')(passport);
@@ -14,8 +15,9 @@ var configRoutes = function (app){
 	/* 
 	 * login
 	 * Login.render goi ham trong thu muc controllers/login
+	 * isLoggedIn kiem tra da dang nhap hoac dang ki hay chua
 	 */
-	app.get('/Login',Login.render );
+	app.get('/Login',isLoggedIn,Login.render );
 
 	/* 
 	 * Dung passport xac thuc nguoi dung
@@ -33,7 +35,7 @@ var configRoutes = function (app){
 	 * SignUp 
 	 * SignUp.render goi ham trong thu muc controllers/SignUp
 	 */
-	app.get('/SignUp', SignUp.render);
+	app.get('/SignUp',isLoggedIn,SignUp.render);
 
 	/*
  	 * Thanh cong quay lai trang home
@@ -60,13 +62,22 @@ var configRoutes = function (app){
 		failureRedirect : '/Login'
 	}));
 
+	/*
+	 * thuc hien chuc nang viet blog
+	 * thanh cong hay that bai deu load lai trang writeBlog
+	 */
 
 	app.get('/WriteBlog', WriteBlog.Render);
 	app.post('/WriteBlog', WriteBlog.Process);	
 
+	/*
+	 * Load cac danh sach Blog, theo thu tu giam dan cua id
+	 */
 	app.get('/ListBlog',ListBlog.loadListBlog, ListBlog.render);
 
-
+	/*
+	 */
+	app.get('/Blog/:id',ShowBlog.LoadBlog, ShowBlog.Render); 
 	
 	/*
 	app.get('/Home', function(req, res, next){
@@ -91,6 +102,16 @@ var configRoutes = function (app){
 	app.get('/BlogA', function(req, res, next){
   		res.render('BlogA');
 	});*/
+
+	function isLoggedIn(req, res, next) {
+ 
+		// nếu người dùng đã đăng nhập thì tiếp tục thực hiện
+ 		if (req.isAuthenticated())
+ 			return next();
+ 
+		// ngược lại điều hướng về đăng nhập.
+ 		res.redirect('/');
+	}
 }
 module.exports = configRoutes;
 

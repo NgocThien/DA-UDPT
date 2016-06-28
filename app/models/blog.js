@@ -26,22 +26,3 @@ Blog.plugin(autoIncrement.plugin, {
 
 
 
-/*var mongoose = require('mongoose'); 
-//var bcrypt = require('bcrypt-nodejs');
-//bai dang
-var Blog = mongoose.Schema({
-	id:String,
-	UserName: String,
-	Title: String,
-	Contain: String,
-	DateUpLoad: Date,
-	Comment: [{
-		UserNameComment : String,
-		ContainComment: String,
-		DateComment: Date
-	}]
-
-}, {collection: 'Blog1'});
-
-
-mongoose.model('Blog1', Blog);*/
