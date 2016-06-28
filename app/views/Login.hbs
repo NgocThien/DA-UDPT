@@ -3,30 +3,38 @@
       <!--Hình lớn-->
       <div class="container">
        <div class="row">
-        <div class="col-md-5">
-           <legend><h3 class="text-center" style="color: #FFFF00"><strong><span class="glyphicon glyphicon-user"></span> Đăng nhập</strong></h3></legend>
-        <form action="/Login" method ="POST">
-          <div class="form-group" style="background: #000080">
-            <label for="" style="color:   #FFFF00; font-size: 15px">Tên đăng nhập</label></br>
-            <input class="form-control" type="text" size="40" placeholder="Tên đăng nhập..." name ="txtUser"></input>
+         <div class="col-md-4 col-md-offset-2">
+           <p style="color: #FFFF00; font-size: 18px"><strong>Chỉ với một tài khoản Blog3T,
+            bạn có thể khám phá nhiều điều kì diệu trong cuộc sống.</strong></p>
+            <a href ='/SignUp'>
+              <button class="btn btn-danger"type="button" style="width: 240px; height:50px; font-size:25px">Đăng kí tài khoản<span class="glyphicon glyphicon-chevron-right"></span></button>
+            </a>
+            <legend></br></legend>
+            <p style="color: #FFFF00; font-size: 18px"><strong>Hoặc đăng nhập với tài khoản Facebook:</strong></p>
+            <a href ='/auth/facebook'>
+              <button style="border: 0; background: transparent" type="button"> <img src="img\Facebook.gif" width="32" height="32"> Facebook
+              </button>
+            </a>
           </div>
 
-          <div class="form-group" style="background: #000080">
-            <label for="" style="color:   #FFFF00;font-size: 15px">Mật khẩu</label></br>
-            <input class="form-control" type="password" size="40" placeholder="Nhập mật khẩu..." name ="txtPass"></input>
-          </div>
-          <a href ='/auth/facebook'>
-            <button style="border: 0; background: transparent" type="button"> <img src="img\Facebook.gif" width="32" height="32"></button>
-          </a>
-          
-          <button class="btn btn-primary"type="submit" style="width: 100px">Đăng nhập</button>
-          <a href ='/SignUp'>
-            <button class="btn btn-danger"type="button" style="width: 100px">Đăng kí</button>
-          </a>
-         </form>
-         
-          
-        </div>
+
+          <div class="col-md-5">
+           <form action="/Login" method ="POST">
+            <legend style="color:   Blue">Đăng nhập:</legend>
+            <div class="form-group" style="background: #000080">
+              <label for="" style="color:   #FFFF00; font-size: 15px">Tên đăng nhập</label></br>
+              <input class="form-control" type="text" size="40" placeholder="Tên đăng nhập..." name ="txtUser"></input>
+            </div>
+
+            <div class="form-group" style="background: #000080">
+              <label for="" style="color:   #FFFF00;font-size: 15px">Mật khẩu</label></br>
+              <input class="form-control" type="password" size="40" placeholder="Nhập mật khẩu..." name ="txtPass"></input>
+            </div>
+            <button class="btn btn-link pull-left" type="submit" style="width: 100px; color: #FFFF00">Quên mật khẩu?</button>
+            <button class="btn btn-primary pull-right" type="submit" style="width: 100px">Đăng nhập</button>
+          </form>
+
+        </div> 
       </div>
-</br>
-      
+    </div>
+  </br>
