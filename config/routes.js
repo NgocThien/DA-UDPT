@@ -2,13 +2,9 @@ var Login = require('../app/controllers/Login');
 var SignUp = require('../app/controllers/SignUp');
 var WriteBlog = require('../app/controllers/WriteBlog');
 var ListBlog = require('../app/controllers/ListBlog');
-
 var Manager = require('../app/controllers/Manager');
-
 var ShowBlog = require('../app/controllers/ShowBlog');
-
 var passport = require('passport');
-
 require('./passport/passport')(passport);
 var mongoose = require('mongoose');
 var User = mongoose.model('User');
@@ -71,6 +67,39 @@ var configRoutes = function (app){
 	}));
 
 	/*
+	 * Logout tai khoan
+	 */
+	app.get('/Logout', function(req, res, next){
+		req.logout();
+		res.redirect('/');
+	})
+
+	/*
+	 * thuc hien chuc nang viet blog
+	 * thanh cong hay that bai deu load lai trang writeBlog
+	 */
+
+	app.get('/WriteBlog',isLoggedIn, WriteBlog.Render);
+	app.post('/WriteBlog', WriteBlog.Process);	
+
+	/*
+	 * Load cac danh sach Blog, theo thu tu giam dan cua id
+	 */
+	app.get('/ListBlog',ListBlog.loadListBlog, ListBlog.render);
+
+
+
+	app.get('/Manager', Manager.Render);
+	app.post('/Manager', Manager.Update);
+
+	/*
+	 * Hien thong bai viet
+	 */
+	app.get('/Blog/:id',ShowBlog.LoadBlog, ShowBlog.Render); 
+
+
+
+	/*
 	 * thuc hien chuc nang viet blog
 	 * thanh cong hay that bai deu load lai trang writeBlog
 	 */
@@ -100,29 +129,10 @@ var configRoutes = function (app){
 	 */
 	app.post('/Blog',ShowBlog.Comment);
 
-	/*
-	app.get('/Home', function(req, res, next){
-		res.render('Home');
-	});
-
-
-	app.get('/Contact', function(req, res, next){
-  		res.render('Contact');
-	});
-
 	
+	app.get('/Home', function(req, res, next){
+		res.render('Home',{user: req.user})});
 
-	app.get('/ListBlog', function(req, res, next){
-  		res.render('ListBlog');
-	});
-
-	app.get('/WriteBlog', function(req, res, next){	
-  		res.render('WriteBlog');
-	});
-
-	app.get('/BlogA', function(req, res, next){
-  		res.render('BlogA');
-	});*/
 
 	function isLoggedIn(req, res, next) {
  

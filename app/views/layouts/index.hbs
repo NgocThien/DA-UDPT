@@ -7,10 +7,9 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
   <title>{{{title}}}</title>
   <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
-
     <!-- Bootstrap -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
-
+  </style>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -20,16 +19,30 @@
   </head>
   <body>
   <div id="header">
-      <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <!--Navbar-->
+<!--Thanh Navbar thứ 1-->
+      <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="navbar-collapse collapse" id="Main-Menu">
+          <ul class="nav navbar-nav pull-right" >
+            {{# unless user}}
+            <li><a href="/Login">Đăng nhập</a></li>
+            <li><a href="/SignUp">Đăng kí</a></li>
+            {{/unless}}
+            {{# if user}}
+            <li><a href="Manager">Thông tin người dùng</a></li>
+            <li><a href="/Logout">Thoát</a></li>
+
+            {{/if}}
+          </ul>
+          <legend></legend> 
+          </div>
+           <!--Thu gọn Navbar khi thu nhỏ cửa nhỏ-->
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#Main-Menu">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#Main-Menu1">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>  
             <span class="icon-bar"></span> 
           </button>
-          <a href="" class="navbar-brand">Blog 3T</a>
-        </div>
+
 
         <div class="navbar-collapse collapse" id="Main-Menu">
           <ul class="nav navbar-nav pull-right">
@@ -41,9 +54,8 @@
             <li><a href="/SignUp">Đăng kí</a></li>
             {{/unless}}
             {{# if user}}
-            <li><a href="Manager">Thông tin người dùng</a></li>
+            <li><a href="/Manager">Thông tin người dùng</a></li>
             <li><a href="/Logout">Thoát</a></li>
-
             {{/if}}
           </ul>
         </div>
@@ -51,11 +63,30 @@
       </nav>
     </div></br> </br>
     </div></br> </br></br>
+\
+      <!--Thanh Navbar thứ 2-->
+      <a href="Home" class="navbar-brand" style="font-size:30px">Blog 3T</a>
+      <div class="container">
+       <div class="row">
+        <div class="navbar-collapse collapse" id="Main-Menu1">
+          <ul class="nav navbar-nav">
+            <li class="active" style="font-size:18px"><a href="Home"><span class="glyphicon glyphicon-home"></span> Trang chủ</a></li>
+            <li style="font-size:18px"><a href="ListBlog"><span class="glyphicon glyphicon-list-alt"></span> Bài blog</a></li>
+            <li style="font-size:18px"><a href="WriteBlog"><span class="glyphicon glyphicon-pencil"></span> Viết Blog</a></li>
+          </ul> 
+          </div>
+</div></div></div></div> </div></br>
+        </div>
+        <!--End Navbar-->
+      </nav>
+   </br></br></br></br></br>
+    
+
   {{{body}}}
 
 
     <div class = "form-group col-md-offset-4">
-        <p style="color: red">Blog 3T group @ Copyright by Tran Quang Tin, Nguyen Minh Tu, Pham Ngoc Thien </p>
+        <p style="color:  #000080">Blog 3T group @ Copyright by Tran Quang Tin, Nguyen Minh Tu, Pham Ngoc Thien </p>
       </div>
       
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

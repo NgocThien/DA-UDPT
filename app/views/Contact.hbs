@@ -1,69 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title>Đồ án-Ứng dụng phân tán</title>
-  <link rel="stylesheet" type="text/css" href="/style.css">
 
-    <!-- Bootstrap -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div id="header">
-      <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <!--Navbar-->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#Main-Menu">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>  
-            <span class="icon-bar"></span> 
-          </button>
-          <a href="" class="navbar-brand">Blog 3T</a>
-        </div>
-
-        <div class="navbar-collapse collapse" id="Main-Menu">
-          <ul class="nav navbar-nav pull-right">
-            <li><a href="Home">Trang chủ</a></li>
-            <li><a href="ListBlog">Bài blog</a></li>
-            <li><a href="WriteBlog">Viết Blog</a></li>
-            <li><a href="Login">Đăng nhập</a></li>
-            <li><a href="SignUp">Đăng kí</a></li>
-            <li><a href="Contact">Liên hệ</a></li>
-            <li><a href="#">Thoát</a></li>
-          </ul>
-        </div>
-        <!--End Navbar-->
-      </nav>
-    </div></br> </br>
-    <!--Table-->
-    <div class="jumbotron">
-
-      <!--Hình lớn-->
       <div class="container">
        <div class="row">
-       <div class="col-md-10">
-       <legend><h3 class="text-center" style="color:   #000080"><strong>Liên hệ</strong></h3></legend>
+       <div class="col-md-11">
+       <legend><h3 style="color:      #000080"><strong><span class="glyphicon glyphicon-send"></span> Liên hệ</strong></h3></legend>
         <div class="col-md-5">
            
        <form name ="frmLienHe" method = "GET">
-        <li style="font-size: 15px; color: #000080"><strong>Họ tên:</strong></br> <input type="text" name="txtHoTen" size="30"  maxlength="50" tabindex="1" placeholder ="Nhập họ tên.."></input></li></form>
+        <li style="font-size: 15px; color:    #000080"><strong>Họ tên:</strong></br> <input type="text" name="txtHoTen" size="30"  maxlength="50" tabindex="1" placeholder ="Nhập họ tên.."></input></li></form>
 
      
 
       <form name ="frmSoDienThoai" method = "GET">
-        <li style="font-size: 15px; color: #000080"><strong>Số điện thoại:</strong></br><input type="text" name="txtSDT" size="30" maxlength="50" tabindex="3" placeholder ="Nhập SĐT..."></input></li></form>
+        <li style="font-size: 15px; color:    #000080"><strong>Số điện thoại:</strong></br><input type="text" name="txtSDT" size="30" maxlength="50" tabindex="3" placeholder ="Nhập SĐT..."></input></li></form>
     
-     <li style="font-size: 15px; color: #000080"><strong>Nội dung:</strong></li>
+     <li style="font-size: 15px; color:   #000080"><strong>Nội dung:</strong></li>
         <textarea cols="65" rows="7" name ="ND0" tabindex="4" wrap="off">
         </textarea>
         </br></br> 
@@ -74,10 +24,10 @@
 
         <div class="col-md-5">
          <form name ="frmEmail" method = "GET">
-        <li style="font-size: 15px; color: #000080"><strong>Email:</strong></br> <input type="text" name="txtEmail" size="30"  maxlength="50" tabindex="2" placeholder ="Nhập Email..."></input></li>
+        <li style="font-size: 15px; color:    #000080"><strong>Email:</strong></br> <input type="text" name="txtEmail" size="30"  maxlength="50" tabindex="2" placeholder ="Nhập Email..."></input></li>
       </form>
-         <li style="font-size: 15px; color: #000080"><strong>Quận Thành phố:</strong></br>
-        <select name = "TinhThanh" id = "SizeForm">
+         <li style="font-size: 15px; color:   #000080"><strong>Quận Thành phố:</strong></br>
+        <select name = "TinhThanh" id = "SizeForm" style="color: #000080">
           <optgroup label="TPHCM">
             <option value="Q1"> Quận 1 - TPHCM</option>
             <option value="Q5"> Quận 5 - TPHCM</option>
@@ -100,21 +50,5 @@
           </div>
           </div>
 </div>
-      </div>
       </form>
-      </div>
 </br>
-      <!--Footer-->
-      <div class = "form-group col-md-offset-4">
-        <p style="color: red">Blog 3T group @ Copyright by Tran Quang Tin, Nguyen Minh Tu, Pham Ngoc Thien </p>
-      </div>
-    </div>
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="/js/bootstrap.min.js"></script>
-    <script type="text/javascript">  
-    </script>
-  </body>
-</html>

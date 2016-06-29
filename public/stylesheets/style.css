@@ -1,18 +1,1 @@
-.show-grid [class^="col-"]
-{
-	padding-top: 10px;
-	padding-bottom: 10px;
-	background-color: #eee;
-	border: 1px solid #ddd;
-	background-color: rgba(86,61,124,.15);
-	border: 1px solid rgba(86,61,124,.2);
-}
-
-.jumbotron
-{
-	position: relative;
-	background-image: url('/img/1.jpg');
-	width:1360px;
-	height:700px;
-	background-size: cover;
-}
+.navbar-nav > li > a {padding-top:8px !important; padding-bottom:8px !important;}
