@@ -17,10 +17,11 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body>
+  <body style="background-image: url(img/bg.jpg); background-size: cover">
   <div id="header">
 <!--Thanh Navbar thứ 1-->
       <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <a href="Home" class="navbar-brand" style="font-size:30px">Blog 3T</a>
         <div class="navbar-collapse collapse" id="Main-Menu">
           <ul class="nav navbar-nav pull-right" >
             {{# unless user}}
@@ -42,37 +43,15 @@
             <span class="icon-bar"></span>  
             <span class="icon-bar"></span> 
           </button>
-
-
-        <div class="navbar-collapse collapse" id="Main-Menu">
-          <ul class="nav navbar-nav pull-right">
-            <li><a href="/Home">Trang chủ</a></li>
-            <li><a href="/ListBlog">Bài blog</a></li>
-            <li><a href="/WriteBlog">Viết Blog</a></li>
-            {{# unless user}}
-            <li><a href="/Login">Đăng nhập</a></li>
-            <li><a href="/SignUp">Đăng kí</a></li>
-            {{/unless}}
-            {{# if user}}
-            <li><a href="/Manager">Thông tin người dùng</a></li>
-            <li><a href="/Logout">Thoát</a></li>
-            {{/if}}
-          </ul>
-        </div>
-        <!--End Navbar-->
-      </nav>
-    </div></br> </br>
-    </div></br> </br></br>
-\
+        
       <!--Thanh Navbar thứ 2-->
-      <a href="Home" class="navbar-brand" style="font-size:30px">Blog 3T</a>
       <div class="container">
        <div class="row">
         <div class="navbar-collapse collapse" id="Main-Menu1">
           <ul class="nav navbar-nav">
-            <li class="active" style="font-size:18px"><a href="Home"><span class="glyphicon glyphicon-home"></span> Trang chủ</a></li>
-            <li style="font-size:18px"><a href="ListBlog"><span class="glyphicon glyphicon-list-alt"></span> Bài blog</a></li>
-            <li style="font-size:18px"><a href="WriteBlog"><span class="glyphicon glyphicon-pencil"></span> Viết Blog</a></li>
+            <li class="active" style="font-size:18px"><a href="/Home"><span class="glyphicon glyphicon-home"></span> Trang chủ</a></li>
+            <li style="font-size:18px"><a href="/ListBlog"><span class="glyphicon glyphicon-list-alt"></span> Bài blog</a></li>
+            <li style="font-size:18px"><a href="/WriteBlog"><span class="glyphicon glyphicon-pencil"></span> Viết Blog</a></li>
           </ul> 
           </div>
 </div></div></div></div> </div></br>
@@ -83,10 +62,10 @@
     
 
   {{{body}}}
-
+</div> </br></br></br></br></br>
 
     <div class = "form-group col-md-offset-4">
-        <p style="color:  #000080">Blog 3T group @ Copyright by Tran Quang Tin, Nguyen Minh Tu, Pham Ngoc Thien </p>
+        <p style="color:  #000080"><strong>Blog 3T group @ Copyright by Tran Quang Tin, Nguyen Minh Tu, Pham Ngoc Thien</strong> </p>
       </div>
       
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
