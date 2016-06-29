@@ -4,7 +4,7 @@ var path =require ('path');
 var fs = require('fs');
 require('dotenv').config();
 
-mongoose.connect('mongodb://localhost/myblog', function (err){
+mongoose.connect(process.env.DB_URL, function (err){
 	if (err)
 		console.log('diconnect');
 });
