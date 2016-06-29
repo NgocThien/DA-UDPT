@@ -2,11 +2,11 @@ var Login = require('../app/controllers/Login');
 var SignUp = require('../app/controllers/SignUp');
 var WriteBlog = require('../app/controllers/WriteBlog');
 var ListBlog = require('../app/controllers/ListBlog');
-<<<<<<< HEAD
+
 var Manager = require('../app/controllers/Manager');
-=======
+
 var ShowBlog = require('../app/controllers/ShowBlog');
->>>>>>> ShowBlog
+
 var passport = require('passport');
 
 require('./passport/passport')(passport);
