@@ -1,8 +1,8 @@
 module.exports = {
 	'facebookAuth' : {
-	'clientID' :process.env.FB_CLIENT_ID, 
-	'clientSecret' :process.env.FB_SECRET_ID,
-	'callbackURL' : 'http://localhost:3000/auth/facebook/callback'
+	FB_CLIENT_ID = '165598543841093',
+	FB_SECRET_ID = '594c88a87cda8da1165fcdd4336ba9c8'
+	'callbackURL' : 'http://apps-blog3t.herokuapp.com/auth/facebook/callback'
 	}
 
 };
