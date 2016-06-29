@@ -14,17 +14,17 @@
 
 **Wireframe(sơ đồ luồng xử lý qua các màn hình)**
 
-<img src=wireframe.png>
+<img src="wireframe.PNG">
 
 **Data schema**
 
 Ta có bảng cơ sở dữ liệu dùng để lưu thông tin cá nhân của một tài khoảng, giúp việc quản lý người dùng một cách đơn giản và thuận tiện.
 
-<img src=user.png>
+<img src="user.PNG">
 
 Ta có bảng cơ sở dữ liệu lưu lại các bài blog trên trang web
 
-<img src=Blog.png>
+<img src="Blog.PNG">
 
 
 Demo(GIF)
