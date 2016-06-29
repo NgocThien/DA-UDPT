@@ -1,27 +1,26 @@
 
 <!--Nội dung-->
       <!--Button tao tin nhắn-->
-{{# each ListBlog}}
-  {{# if this.Title}}
+
    <div class="contanier">
    <div class="row">
+       {{# each ListBlog}}
+    {{# if this.Title}}
    <div class="col-md-3">
-      <div class="thumbnail" style="height: 150;width: 270px">
-       <img src="img/1.jpg" style="width:250px; height=80px">
+      <div class="thumbnail" style="height: 150px;width: 270px">
+       <img src="img/1.jpg" style="width:250px; height: 80px">
         <div class="caption">
-          <h3 style="color: black;text-align:center"><a href="/Blog/{{this._id}}" class="btn btn-link" role="button" style="font-size:30px; text-decoration:none"><strong>{{this.Title}}</strong></a></h3>
+          <h3 ><a href="/Blog/{{this._id}}" class="btn btn-link"><strong>{{this.Title}}</strong></a></h3>
           <p style="display:inline"><span class="glyphicon glyphicon-eye-open"></span> 3</p>
           <p style="display:inline"><span class="glyphicon glyphicon-comment"></span> 8</p>
-          <h3 style="color: red;background: #FFFF00"><strong>{{this.Title}}</strong></h3>
-          <p>Người viết: {{this.Poster}}</p>
-          
-			    <input  class="btn btn-primary" type = "submit">Xem tiếp <button>
         </div>
       </div>
    </div>
+    {{/if}}
+    {{/each}}
   </div>
-  {{/if}}
-{{/each}}
+  </div>
+
 
 <button id = 'LoadBlog' class ='btn btn-primary'> </button>
 
