@@ -1,0 +1,40 @@
+
+<!--Nội dung-->
+      <!--Button tao tin nhắn-->
+    <script>
+    function getPathImage(){
+      var idImage = Math.floor(Math.random() * 10);
+      var string = "/img/"+ idImage + ".jpg";
+      return string;
+
+    };
+    function getCommentNum() {
+    $.getJSON("https://graph.facebook.com/v2.4/?fields=share{comment_count}&amp;id=http://example.com/", function(json) {
+        return json.comments.count;
+    });
+}   
+
+    </script>
+
+   <div class="contanier">
+   <div class="row">
+  {{# each ListBlog}}
+    {{# if this.Title}}
+     <div class="col-sm-3 col-md-3">
+    <div class="thumbnail">
+      <img src ="img/1.jpg" onload="this.onload=null, this.src=getPathImage();" style="width:250px; height: 180px">
+      <div class="caption">
+        <p style="text-align: center"><a href="/Blog/{{this._id}}" class="btn btn-link"><strong>{{this.Title}}</strong></a></p>
+          <p style="display:inline"><span class="glyphicon glyphicon-eye-open"></span>{{this.View}}</p>
+          <span class="fb-comments-count" data-href="http://xem.vn/tai-khong-doi-tuoi-442125"></span> 
+    
+          <p style="display:inline"><span class="glyphicon glyphicon-comment"  ></span></p>
+      </div>
+    </div>
+    </div>
+    {{/if}}
+    {{/each}}
+  </div>
+  </div>
+  
+      

@@ -1,0 +1,27 @@
+
+    <!--Table-->
+    <div class="container">
+       <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-primary">
+            <div class="panel-heading"><span class="glyphicon glyphicon-list"></span> {{Blog.Title}}</div>
+                <textarea cols="115" rows="20"  readonly="true" style="width: 100%">{{Blog.Content}}</textarea>
+          </div>
+        </div>
+
+        <legend><h3 style=" color:#00CED1; font-size: 20px"><i><strong>Bình luận<strong></strong></i>
+          <div class="fb-share-button" data-href="" data-layout="button_count" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="">Chia sẻ</a></div>
+
+       
+        <div class="col-md-offset-9"><p>Người đăng: {{Blog.Poster}}</p></div>
+        </h3></legend>
+              
+        <div class="fb-comments" data-href="http://localhost:3000/Blog/{{Blog._id}}" data-width="1000" data-numposts="10"></div>
+      </div>
+    
+      <script src="/js/script/facebook.js"></script>
+      
+    </div> 
+    
+            
+  
