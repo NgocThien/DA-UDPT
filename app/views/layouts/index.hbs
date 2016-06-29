@@ -23,13 +23,14 @@
       <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="navbar-collapse collapse" id="Main-Menu">
           <ul class="nav navbar-nav pull-right" >
-            {{# unless LoggedIn}}
-             <li class="active"><a href="Login">Đăng nhập</a></li>
-            <li><a href="SignUp">Đăng kí</a></li>
+            {{# unless user}}
+            <li><a href="/Login">Đăng nhập</a></li>
+            <li><a href="/SignUp">Đăng kí</a></li>
             {{/unless}}
-            <li><a href="Contact">Liên hệ</a></li>
-            {{# if LoggedIn}}
-            <li><a href="Logout">Thoát</a></li>
+            {{# if user}}
+            <li><a href="Manager">Thông tin người dùng</a></li>
+            <li><a href="/Logout">Thoát</a></li>
+
             {{/if}}
           </ul>
           <legend></legend> 

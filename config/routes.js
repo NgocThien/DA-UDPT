@@ -1,16 +1,29 @@
 var Login = require('../app/controllers/Login');
 var SignUp = require('../app/controllers/SignUp');
+var WriteBlog = require('../app/controllers/WriteBlog');
+var ListBlog = require('../app/controllers/ListBlog');
+
+var Manager = require('../app/controllers/Manager');
+
+var ShowBlog = require('../app/controllers/ShowBlog');
+
 var passport = require('passport');
+
 require('./passport/passport')(passport);
+var mongoose = require('mongoose');
+var User = mongoose.model('User');
+
+
 var configRoutes = function (app){
 	//home
 	app.get('/', function(req, res, next){
-		res.render('Home',{user: req.user, LoggedIn:req.isAuthenticated()});
+		res.render('Home',{user: req.user});
 	});
 
 	/* 
 	 * login
 	 * Login.render goi ham trong thu muc controllers/login
+	 * isLoggedIn kiem tra da dang nhap hoac dang ki hay chua
 	 */
 	app.get('/Login',Login.render );
 
@@ -30,7 +43,7 @@ var configRoutes = function (app){
 	 * SignUp 
 	 * SignUp.render goi ham trong thu muc controllers/SignUp
 	 */
-	app.get('/SignUp', SignUp.render);
+	app.get('/SignUp',SignUp.render);
 
 	/*
  	 * Thanh cong quay lai trang home
@@ -56,12 +69,42 @@ var configRoutes = function (app){
 		successRedirect : '/',
 		failureRedirect : '/Login'
 	}));
+
+	/*
+	 * thuc hien chuc nang viet blog
+	 * thanh cong hay that bai deu load lai trang writeBlog
+	 */
+
+	app.get('/WriteBlog',isLoggedIn, WriteBlog.Render);
+	app.post('/WriteBlog', WriteBlog.Process);	
+
+	/*
+	 * Load cac danh sach Blog, theo thu tu giam dan cua id
+	 */
+	app.get('/ListBlog',ListBlog.loadListBlog, ListBlog.render);
+
+
+
+	app.get('/Manager', Manager.Render);
+	app.post('/Manager', Manager.Update);
+
+	/*
+	 * Hien thong bai viet
+	 */
+	app.get('/Blog/:id',ShowBlog.LoadBlog, ShowBlog.Render); 
+
 	
-	app.get('/Home', function(req, res, next){
-		res.render('Home');
-	});
 
+	/*
+	 * gui comment len bai viet
+	 */
+	app.post('/Blog',ShowBlog.Comment);
 
+	
+app.get('/Home', function(req, res, next){
+		res.render('Home',{user: req.user})});
+
+/*
 	app.get('/Contact', function(req, res, next){
   		res.render('Contact');
 	});
@@ -79,10 +122,16 @@ var configRoutes = function (app){
 	app.get('/BlogA', function(req, res, next){
   		res.render('BlogA');
 	});
-
-	app.get('/LoginFacebook', function(req, res, next){
-  		res.render('LoginFacebook');
-	});
+*/
+	function isLoggedIn(req, res, next) {
+ 
+		// nếu người dùng đã đăng nhập thì tiếp tục thực hiện
+ 		if (req.isAuthenticated())
+ 			return next();
+ 
+		// ngược lại điều hướng về đăng nhập.
+ 		res.redirect('/Login');
+	}
 }
 module.exports = configRoutes;
 
