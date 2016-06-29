@@ -9,12 +9,7 @@ var Blog = mongoose.Schema({
 	Content: String,
 	DatePost: Date,
 	Poster: String,
-	Comment:[{
-		User:String, 
-		ContentCmt: {type:String, default :""}, 
-		DateCmt:Date}],
-
-
+	NumComment:{type: Number, default:0},
 	View:{type:Number, default:0}},{collection:'Blogs'});
 
 mongoose.model('Blogs',Blog);
