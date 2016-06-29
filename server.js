@@ -2,6 +2,7 @@ var express = require('express');
 var mongoose = require('mongoose');
 var path =require ('path');
 var fs = require('fs');
+require('dotenv').config();
 
 mongoose.connect('mongodb://localhost/myblog', function (err){
 	if (err)

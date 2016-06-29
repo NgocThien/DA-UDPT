@@ -1,6 +1,6 @@
 var LocalStrategy = require('passport-local').Strategy;
 var FacebookStrategy = require('passport-facebook').Strategy;
-var configAuth = require('./auth');
+var configAuth = require('./env/development');
  
 // load model User
 var mongoose = require('mongoose');

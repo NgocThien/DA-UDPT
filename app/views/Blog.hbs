@@ -1,3 +1,4 @@
+
     <!--Table-->
     <div class="container">
        <div class="row">
@@ -8,23 +9,19 @@
           </div>
         </div>
 
-        <legend><h3 style=" color:    #00CED1; font-size: 20px"><i><strong>Bình luận<strong></strong></i>
-          <div class="fb-share-button" data-href="http://xem.vn/tuoi-tho-du-doi-an-xau-rieng-nhung-khong-biet-cach-mo" data-layout="button_count" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://xem.vn/tuoi-tho-du-doi-an-xau-rieng-nhung-khong-biet-cach-mo">Chia sẻ</a></div>
+        <legend><h3 style=" color:#00CED1; font-size: 20px"><i><strong>Bình luận<strong></strong></i>
+          <div class="fb-share-button" data-href="" data-layout="button_count" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="">Chia sẻ</a></div>
+
+          <div class="fb-comments-count" data-href="http://localhost:3000/Blog/{{Blog._id}}"></div>
 
         </h3></legend>
               
         <div class="fb-comments" data-href="http://localhost:3000/Blog/{{Blog._id}}" data-width="1000" data-numposts="5"></div>
+        <div class="fb-comments" data-href="http://localhost:3000/Blog/{{Blog._id}}" data-width="1000" data-numposts="10"></div>
       </div>
     
-      <script>
-      (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.6&appId=165598543841093";
-         fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
-      </script>
+      <script src="/js/script/facebook.js"></script>
+      
     </div> 
     
             
