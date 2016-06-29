@@ -6,7 +6,7 @@ var Manager = require('../app/controllers/Manager');
 var ShowBlog = require('../app/controllers/ShowBlog');
 var passport = require('passport');
 
-require('./passport/passport')(passport);
+require('./passport')(passport);
 var mongoose = require('mongoose');
 var User = mongoose.model('User');
 
