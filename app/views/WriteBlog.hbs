@@ -1,49 +1,17 @@
 
-</div></br> </br></br></br>
-    <!--Table-->
-    <div class="container">
-       <div class="row">
-        <div class="col-sm-4">
-        <div class="thumbnail" style="height: 450px; width: 340px">
-          <img src="img/3.jpg" style="height: 230px;width: 300px">
-          <div class="caption">
-            <h3 class="text-center" style="color: blue;background: #FFFF00"><strong>Trần Quang Tín</strong></h3>
-            <ul>
-              <li><p>Tuổi: 21</p></li>
-              <li><p>Số bài đăng: 3</p></li>
-              <li><p>Điểm tích luỹ: 108</p></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      
-       
-        <form action="/WriteBlog" class="form-horizontal" method="POST" role="form">
-        <div>
-            <input class ="form-control" name = "txtTitle" id ="title" type="text" style="width: 66%" placeholder="Nhập tiêu đề bài đăng..." tabindex="1" name ="txtTitle">
-          </div>
-        <div class="col-sm-8">
-          <textarea name = "txtContent" id = "contain" cols="30" rows="25" style="width: 100%"></textarea>
-          <button type="submit" class="btn btn-danger" tabindex="5">Viết bài</button>
-
- 
 <!--Table-->
+  <form method = "POST" action ='/WriteBlog'>
     <div class="container">
        <div class="row">
        <div class="col-md-12">
          <label style="color:#000080">Nhập tiêu đề:</label></strong>
-           <input class ="form-control" type="text" placeholder="Nhập tiêu đề..." tabindex="1" name ="txtUser">  
+           <input class ="form-control" type="text" placeholder="Nhập tiêu đề..." tabindex="1" maxlength="32" name ="txtTitle">  
            <legend></legend>
               <label style="color:#000080">Viết Blog:</label></strong>
-          <textarea cols="30" rows="25" style="width: 100%" placeholder="  Viết blog..." tabindex="2"></textarea>
-          <button type="button" class="btn btn-warning pull-right" style="width: 150px; font-size: 15px;color: red" >Đăng bài <span class="glyphicon glyphicon-pencil"></span> </button>
+          <textarea cols="30" rows="25" style="width: 100%" placeholder="  Viết blog..." tabindex="2" name = "txtContent"></textarea>
+          <button type="submit" class="btn btn-warning pull-right" style="width: 150px; font-size: 15px;color: red" >Đăng bài <span class="glyphicon glyphicon-pencil"></span> </button>
 
         </div>
         </form>
  </div></br>
-
-
-        <div class = "form-group col-md-offset-3" >
-        <p style="color: red">Blog 3T group @ Copyright by Tran Quang Tin, Nguyen Minh Tu, Pham Ngoc Thien </p>
-      </div>
 

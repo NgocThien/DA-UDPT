@@ -18,20 +18,21 @@ module.exports = function(passport) {
 		});
 	});
 	passport.use('login', new LocalStrategy({
-		usernameField: 'txtUser',
+		usernameField: 'txtEmail',
 		passwordField : 'txtPass',
 		passReqToCallback : true
 
 	},
-	function(req, username, password, done) {
+	function(req, email, password, done) {
 		process.nextTick(function() {
-			User.findOne({'UserName':username}, function(err, user) {
+			User.findOne({'Email':email}, function(err, user) {
  				if (err)
  					return done(err);
- 				else if (!user)
- 					return done(null, false, req.flash('LoginAlert', 'Tên đăng nhập không tồn tại'));	
- 				else if (!user.validPassword(password))
- 					return done(null, false, req.flash('LoginAlert', 'Mật khẩu không chính xác'));
+ 
+ 				if (!user || !user.validPassword(password))
+ 					return done(null, false, req.flash('LoginAlert',
+ 					'Email hoặc mật khẩu không chính xác'));
+ 
 				else
 					return done(null, user);
 			});
@@ -41,53 +42,52 @@ module.exports = function(passport) {
 
 
 	passport.use('signup', new LocalStrategy({
-		usernameField : 'txtUser',
-		passwordField : 'txtPass',
-		passReqToCallback : true
-	},
-	function(req, username, password, done) {
+ 	usernameField : 'txtEmail',
+ 	passwordField : 'txtPass',
+ 	passReqToCallback : true
+ },
+ function(req, email, password, done) {
 
-		process.nextTick(function() {
+ 	process.nextTick(function() {
 
-			User.findOne({'UserName': username}, function(err, user) {
+		User.findOne({'Email': email}, function(err, user) {
 
-				if (err)
-					return done(err);
+			if (err)
+				return done(err);
 
-				req.checkBody('txtName','Họ Tên không được rỗng.').notEmpty();
-				req.checkBody('txtUser', 'Tên đăng nhập không hợp lệ.').notEmpty();
-				req.checkBody('txtEmail', 'Email không hợp lệ.').isEmail();
-				req.checkBody('txtPass','Mật khẩu dài it nhất 6 kí tự.').isLength({min:6})
-				req.checkBody('txtConfirmPass','Mật khẩu không hợp lệ.').equals(password);
+			req.checkBody('txtName','Họ Tên không được rỗng.').notEmpty();
+			req.checkBody('txtEmail', 'Email không được rỗng.').notEmpty();
+			req.checkBody('txtEmail', 'Email không hợp lệ.').isEmail();
+			req.checkBody('txtConfirmPass','Password không hợp lệ.').isLength({min:1}).equals(password);
 
-				var errors = req.validationErrors();
-				if(errors){
-					return done(null, false, req.flash('RegisterAlert', errors[0].msg));
-				}
+			var errors = req.validationErrors();
+			if(errors){
+				return done(null, false, req.flash('RegisterAlert', errors[0].msg));
+			}
 
 
-				if (user)
-					return done(null, false, req.flash('RegisterAlert',
-						'Tên đăng nhập đã tồn tại, vui lòng chọn tên khác.'));
+			if (user)
+				return done(null, false, req.flash('RegisterAlert',
+					'Email đã tồn tại, vui lòng chọn email khác.'));
 
-				else {
+ 			else {
+ 		
+ 				var data = new User();
+ 				data.Name = req.body.txtName;
+ 				data.Email = email;
+ 				data.Pass = data.generateHash(password);
 
-					var newUser = new User();
-					newUser.Name = req.body.txtName;
-					newUser.UserName = username;
-					newUser.Email = req.body.txtEmail;
-					newUser.Pass = newUser.generateHash(password);
-
-					newUser.save(function(err) {
-						if (err){
-							return done(null, false, req.flash('RegisterAlert', 'Đăng kí thất bại.'));
-						}
-						return done(null, newUser);
-					}); 	
-				}			
-			});
-		});
-	}));
+ 				data.save(function(err) {
+ 				if (err){
+ 					return done(null, false, req.flash('RegisterAlert', 'Đăng kí thất bại.'));
+ 				}
+ 				return done(null, data);
+ 			}); 	
+		}
+ 	
+	});
+});
+}));
 
 	passport.use(new FacebookStrategy({
 
