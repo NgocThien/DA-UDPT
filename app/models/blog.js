@@ -1,6 +1,6 @@
 var mongoose = require('mongoose'); 
 var autoIncrement = require('mongoose-auto-increment');
-var connection = mongoose.createConnection('mongodb://<quangtin03>:<trungtin112>@ds040489.mlab.com:40489/myblog');
+var connection = mongoose.createConnection('mongodb://quangtin03:trungtin112@ds040489.mlab.com:40489/myblog');
  autoIncrement.initialize(connection);
 
 var Blog = mongoose.Schema({

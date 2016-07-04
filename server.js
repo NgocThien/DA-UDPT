@@ -4,7 +4,7 @@ var path =require ('path');
 var fs = require('fs');
 require('dotenv').config();
 
-mongoose.connect('mongodb://<quangtin03>:<trungtin112>@ds040489.mlab.com:40489/myblog', function (err){
+mongoose.connect('mongodb://quangtin03:trungtin112@ds040489.mlab.com:40489/myblog', function (err){
 	if (err)
 		console.log('diconnect');
 });
