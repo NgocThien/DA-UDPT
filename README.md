@@ -26,8 +26,6 @@ Ta có bảng cơ sở dữ liệu lưu lại các bài blog trên trang web
 
 <img src="Blog.PNG">
 
-
-Demo(GIF)
 #### 2. Chuẩn đầu ra của từng thành viên 
 **Phạm Ngọc Thiện - 1312554**
 
@@ -80,5 +78,9 @@ Danh sách chức năng **phụ**:
 * [x] Tạo một trang thông tin người dùng cho phép người dùng quản lí thông tin của mình. 
 * [ ] Hiển thị các bài đăng mới nhất trong mục bài viết gần đây.
 
+## Video Walkthrough
 
-## IIII. Link host
+Here's a walkthrough of implemented user stories:
+![Blog 3T](Demo Web.gif)
+
+## IIII. URL: **https://apps-blog3t.herokuapp.com**
